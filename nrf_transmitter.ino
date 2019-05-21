@@ -18,7 +18,6 @@ void setup() {
 }
 void loop() {
   network.update();
-  //unsigned long potValue = analogRead(A0);  // Read the potentiometer value
   unsigned long Value = sensor.ping_cm();//map(potValue, 0, 1023, 0, 180); // Convert the value to 0-180
   RF24NetworkHeader header(node01);     // (Address where the data is going)
   bool ok = network.write(header, &Value, sizeof(Value)); // Send the data
